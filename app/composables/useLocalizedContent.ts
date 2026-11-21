@@ -1,8 +1,5 @@
 export const useLocalizedContent = () => {
-  const { locale } = useI18n()
-
-  // Default language
-  const fallbackLocale = 'en'
+  const { locale, defaultLocale } = useI18n()
 
   const localize = (
     content: Record<string, string> | null | undefined
@@ -11,7 +8,7 @@ export const useLocalizedContent = () => {
 
     return (
       content[locale.value] ||
-      content[fallbackLocale] ||
+      content[defaultLocale] ||
       Object.values(content).find(Boolean) ||
       ''
     )

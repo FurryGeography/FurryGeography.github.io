@@ -3,10 +3,14 @@ const links = useNavLinks()
 </script>
 
 <template>
-  <div>
-    <UContainer class="sm:border-x border-default pt-10">
-      <AppHeader :links="links" />
+  <div class="min-h-screen">
+    <!-- Wide navigation -->
+    <AppHeader :links="links" />
+
+    <!-- Context -->
+    <UContainer class="sm:border-x border-default">
       <slot />
+
       <AppFooter />
     </UContainer>
   </div>

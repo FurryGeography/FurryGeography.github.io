@@ -59,26 +59,67 @@ const researchAreas = computed(
     </section>
 
     <!-- Research -->
+
+    <!-- Research -->
     <section class="mx-auto max-w-5xl px-6 pb-24">
       <div class="border-t border-default pt-10">
-        <h2 class="mb-8 text-3xl font-medium">
-          {{ $t('home.research') }}
-        </h2>
 
+        <!-- Section Heading -->
         <div
-          v-for="(area, index) in researchAreas"
-          :key="area.id"
+          class="mb-8 flex items-end justify-between gap-4"
         >
-          <h3>
-            {{ localize(area.title) }}
-          </h3>
+          <h2 class="text-3xl font-medium tracking-tight">
+            {{ $t('home.research') }}
+          </h2>
 
-          <p>
-            {{ localize(area.description) }}
-          </p>
+          <span class="font-mono text-xs text-muted">
+            {{ String(researchAreas.length).padStart(2, '0') }}
+          </span>
         </div>
+
+        <!-- Research List -->
+        <div class="border-t border-default">
+          <div
+            v-for="(area, index) in researchAreas"
+            :key="area.id"
+            class="grid grid-cols-[3rem_minmax(0,1fr)]
+                  gap-4 border-b border-default py-8
+                  sm:grid-cols-[4rem_minmax(0,1fr)]
+                  sm:gap-8"
+          >
+            <!-- Number -->
+            <span
+              class="pt-1 font-mono text-xs text-muted"
+            >
+              {{ String(index + 1).padStart(2, '0') }}
+            </span>
+
+            <!-- Content -->
+            <div
+              class="grid gap-3
+                    lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]
+                    lg:gap-8"
+            >
+              <h3
+                class="text-xl font-medium leading-snug
+                      text-highlighted"
+              >
+                {{ localize(area.title) }}
+              </h3>
+
+              <p
+                class="max-w-xl text-sm leading-7
+                      text-muted sm:text-base"
+              >
+                {{ localize(area.description) }}
+              </p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
+
 
 
     <!-- Collaboration -->
@@ -89,9 +130,7 @@ const researchAreas = computed(
         </h2>
 
         <p class="mt-6 max-w-2xl leading-7 text-muted">
-          We welcome collaboration across geography,
-          GIScience, social sciences, and computational
-          research related to furry communities.
+          {{ $t('home.collaborationDescription') }}
         </p>
       </div>
     </section>

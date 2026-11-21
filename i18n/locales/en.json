@@ -13,6 +13,8 @@
     "description": "Connecting furry geographers and researchers through academic exchange and collaborative geographical research.",
     "explore": "Explore the Network",
     "research": "Research Interests",
-    "collaborations": "Open Collaborations"
+    "collaborations": "Open Collaborations",
+    "collaborationDescription": 
+    "We welcome collaboration across geography, GIScience, social sciences, and computational research related to furry communities."
   }
 }
