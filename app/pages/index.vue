@@ -1,4 +1,7 @@
 <script setup lang="ts">
+const { t } = useI18n()
+const { localize } = useLocalizedContent()
+
 const { data: page } = await useAsyncData(
   'index',
   () => queryCollection('index').first()
@@ -13,28 +16,20 @@ if (!page.value) {
 }
 
 useSeoMeta({
-  title: page.value.seo?.title || page.value.title,
-  description:
-    page.value.seo?.description || page.value.description
+  title: () => t('home.title'),
+  description: () => t('home.description')
 })
 
-const researchAreas = [
-  {
-    title: 'Digital Geographies',
-    description:
-      'Exploring online communities, virtual spaces, and digital interactions.'
-  },
-  {
-    title: 'Spatial Social Networks',
-    description:
-      'Understanding geographical relationships within social networks.'
-  },
-  {
-    title: 'Furry Communities & Places',
-    description:
-      'Studying conventions, mobility, and the spatial organization of furry communities.'
-  }
-]
+const { locale } = useI18n()
+
+const { data: researchAreasData } = await useAsyncData(
+  'research-areas',
+  () => queryCollection('researchAreas').first()
+)
+
+const researchAreas = computed(
+  () => researchAreasData.value?.areas ?? []
+)
 </script>
 
 <template>
@@ -42,21 +37,21 @@ const researchAreas = [
     <!-- Hero -->
     <section class="mx-auto max-w-5xl px-6 pb-24 pt-28 md:pt-36">
       <p class="mb-6 text-xs font-medium uppercase tracking-widest text-muted">
-        An Independent Academic Network
+        {{ $t('home.eyebrow') }}
       </p>
 
       <h1 class="max-w-4xl text-5xl font-semibold tracking-tight md:text-7xl">
-        {{ page.title }}
+        {{ $t('home.title') }}
       </h1>
 
       <p class="mt-8 max-w-2xl text-lg leading-8 text-muted">
-        {{ page.description }}
+        	{{ $t('home.description') }}
       </p>
 
       <div class="mt-10">
         <UButton
           to="/about"
-          label="Explore the Network"
+          :label="$t('home.explore')"
           color="neutral"
           size="lg"
         />
@@ -67,35 +62,30 @@ const researchAreas = [
     <section class="mx-auto max-w-5xl px-6 pb-24">
       <div class="border-t border-default pt-10">
         <h2 class="mb-8 text-3xl font-medium">
-          Research Interests
+          {{ $t('home.research') }}
         </h2>
 
         <div
           v-for="(area, index) in researchAreas"
-          :key="area.title"
-          class="flex gap-6 border-b border-default py-6"
+          :key="area.id"
         >
-          <span class="text-sm text-muted">
-            0{{ index + 1 }}
-          </span>
+          <h3>
+            {{ localize(area.title) }}
+          </h3>
 
-          <div>
-            <h3 class="text-xl font-medium">
-              {{ area.title }}
-            </h3>
-            <p class="mt-2 text-muted">
-              {{ area.description }}
-            </p>
-          </div>
+          <p>
+            {{ localize(area.description) }}
+          </p>
         </div>
       </div>
     </section>
+
 
     <!-- Collaboration -->
     <section class="mx-auto max-w-5xl px-6 pb-28">
       <div class="border-t border-default pt-10">
         <h2 class="text-3xl font-medium">
-          Open Collaborations
+          {{ $t('home.collaborations') }}
         </h2>
 
         <p class="mt-6 max-w-2xl leading-7 text-muted">

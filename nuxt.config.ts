@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/ui',
     '@nuxt/content',
+    '@nuxtjs/i18n',
     '@vueuse/nuxt',
     'nuxt-og-image',
     'motion-v/nuxt'
@@ -49,8 +50,30 @@ export default defineNuxtConfig({
 
   prerender: {
     routes: [
-      '/'
+      '/',
+      '/zh'
     ],
     crawlLinks: true
+  },
+
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+        language: 'en-US',
+        file: 'en.json'
+      },
+      {
+        code: 'zh',
+        name: '简体中文',
+        language: 'zh-CN',
+        file: 'zh.json'
+      }
+    ],
+    defaultLocale: 'en',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: false,
+    baseUrl: 'https://furrygeography.github.io'
   }
 })

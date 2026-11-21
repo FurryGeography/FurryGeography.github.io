@@ -1,0 +1,24 @@
+areas:
+  - id: digital-geographies
+    title:
+      en: "Digital Geographies"
+      zh: "数字地理学"
+    description:
+      en: "Exploring online communities, virtual spaces, and digital interactions."
+      zh: "探索线上社群、虚拟空间及数字交互的地理学特征。"
+
+  - id: spatial-social-networks
+    title:
+      en: "Spatial Social Networks"
+      zh: "空间社会网络"
+    description:
+      en: "Understanding geographical relationships within social networks."
+      zh: "研究社会网络中的地理联系及其空间结构。"
+
+  - id: furry-communities
+    title:
+      en: "Furry Communities & Places"
+      zh: "Furry 社群与地方"
+    description:
+      en: "Studying conventions, mobility, and the spatial organization of furry communities."
+      zh: "研究 Furry 展会、社群流动及其空间组织。"

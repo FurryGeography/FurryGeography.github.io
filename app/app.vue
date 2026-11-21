@@ -1,9 +1,15 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
+const links = useNavLinks()
+const i18nHead = useLocaleHead({ seo: true })
 
 const color = computed(() => colorMode.value === 'dark' ? '#020618' : 'white')
 
 useHead({
+  htmlAttrs: {
+    lang: i18nHead.value.htmlAttrs?.lang,
+    dir: i18nHead.value.htmlAttrs?.dir
+  },
   meta: [
     { charset: 'utf-8' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -11,10 +17,7 @@ useHead({
   ],
   link: [
     { rel: 'icon', href: '/favicon.ico' }
-  ],
-  htmlAttrs: {
-    lang: 'en'
-  }
+  ]
 })
 
 useSeoMeta({
@@ -53,7 +56,7 @@ const [{ data: navigation }, { data: files }] = await Promise.all([
       <LazyUContentSearch
         :files="files"
         :navigation="navigation"
-        :links="navLinks"
+        :links="links"
         :fuse="{ resultLimit: 42 }"
       />
     </ClientOnly>

@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "members": "成员",
+    "research": "研究方向",
+    "publications": "学术成果",
+    "collaborations": "合作研究"
+  },
+  "home": {
+    "eyebrow": "独立学术交流网络",
+    "title": "Furry Geography Network",
+    "description": "连接从事地理学及相关研究的 Furry，促进学术交流，并推动 Furry 主题的地理学合作研究。",
+    "explore": "了解我们的网络",
+    "research": "研究兴趣",
+    "collaborations": "开放合作项目"
+  }
+}
