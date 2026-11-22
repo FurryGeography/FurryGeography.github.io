@@ -1,7 +1,11 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData('about', () => {
-  return queryCollection('about').first()
-})
+const { localize } = useLocalizedContent()
+
+const { data: page } = await useAsyncData(
+  'about',
+  () => queryCollection('about').first()
+)
+
 if (!page.value) {
   throw createError({
     statusCode: 404,
@@ -10,58 +14,63 @@ if (!page.value) {
   })
 }
 
-const { global } = useAppConfig()
-
-const title = page.value?.seo?.title || page.value?.title
-const description = page.value?.seo?.description || page.value?.description
-
 useSeoMeta({
-  title,
-  ogTitle: title,
-  description,
-  ogDescription: description
+  title: () => localize(page.value?.hero.title),
+  description: () => localize(page.value?.hero.description)
 })
-
-defineOgImage('Portfolio', { title, description })
 </script>
 
 <template>
   <UPage v-if="page">
-    <UPageHero
-      :title="page.title"
-      :description="page.description"
-      orientation="horizontal"
-      :ui="{
-        container: 'lg:flex sm:flex-row items-center',
-        title: 'mx-0! text-left',
-        description: 'mx-0! text-left',
-        links: 'justify-start'
-      }"
-    >
-      <UColorModeAvatar
-        class="sm:rotate-4 size-36 rounded-lg ring ring-default ring-offset-3 ring-offset-bg"
-        :light="global.picture?.light!"
-        :dark="global.picture?.dark!"
-        :alt="global.picture?.alt!"
-      />
-    </UPageHero>
-    <UPageSection
-      :ui="{
-        container: 'pt-0!'
-      }"
-    >
-      <MDC
-        :value="page.content"
-        unwrap="p"
-      />
-      <div class="flex flex-row justify-center items-center py-10 -space-x-8">
-        <PolaroidItem
-          v-for="(image, index) in page.images"
-          :key="index"
-          :image="image"
-          :index
-        />
+    <article class="mx-auto max-w-3xl px-6 pb-32 pt-28 md:pt-36">
+
+      <!-- Introduction -->
+      <header class="mb-20">
+        <p
+          class="mb-6 text-xs font-medium uppercase
+                 tracking-widest text-muted"
+        >
+          {{ localize(page.hero.eyebrow) }}
+        </p>
+
+        <h1
+          class="text-4xl font-semibold tracking-tight
+                 sm:text-5xl md:text-6xl"
+        >
+          {{ localize(page.hero.title) }}
+        </h1>
+
+        <p
+          class="mt-8 max-w-2xl text-lg leading-8
+                 text-muted md:text-xl md:leading-9"
+        >
+          {{ localize(page.hero.description) }}
+        </p>
+      </header>
+
+      <!-- Main Content -->
+      <div class="border-t border-default pt-14">
+        <section
+          v-for="section in page.sections"
+          :key="section.id"
+          class="mb-16 last:mb-0"
+        >
+          <h2
+            class="mb-6 text-2xl font-medium
+                   tracking-tight text-highlighted"
+          >
+            {{ localize(section.title) }}
+          </h2>
+
+          <p
+            class="text-base leading-8 text-muted
+                   md:text-lg md:leading-9"
+          >
+            {{ localize(section.description) }}
+          </p>
+        </section>
       </div>
-    </UPageSection>
+
+    </article>
   </UPage>
 </template>

@@ -1,0 +1,20 @@
+slug: "bob-li"
+group: "collaborator"
+order: 1
+
+name: "Bob Li"
+
+role:
+  en: "Research Collaborator"
+  zh: "研究合作成员"
+
+interests:
+  en: "Spatial Data Analysis"
+  zh: "空间数据分析"
+
+summary:
+  en: "Contributing expertise in spatial analysis."
+  zh: "提供空间分析方面的专业支持。"
+
+photo: "photo.jpg"
+profileUrl: "https://example.com"

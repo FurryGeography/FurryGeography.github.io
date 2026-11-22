@@ -1,27 +1,38 @@
-title: About Me
-description: Learn more about my journey as a Boston-based UX/UI Designer & Front-End Developer, my design philosophy, and my passion for crafting intuitive digital experiences.
-content: |
-  Hi, I'm **Emma Thompson**, a UX/UI Designer and Front-End Developer based right here in Boston. For the past six years, I've been immersed in the world of digital product creation, focusing on building experiences that are not just functional, but genuinely intuitive and engaging for users.
+title: "About"
+description: "Why study furry communities through geography?"
 
-  My path started at **Boston University**, where I earned a degree in Interactive Design. It was there I discovered my dual passion for the visual language of design and the logical puzzle of code. Since then, I've honed my skills in both areas, believing that the best digital products are born from a deep understanding of both aesthetics and implementation.
+hero:
+  eyebrow:
+    en: "About"
+    zh: "关于"
+  title:
+    en: "Why Furry Geography?"
+    zh: "为什么研究 Furry 地理？"
+  description:
+    en: "Communities do not exist in isolation from space. They emerge through places, movements, digital environments, and connections between people."
+    zh: "社群并非脱离空间而独立存在。它们在地方、流动、数字环境以及人与人之间的联系中形成和发展。"
 
-  ### My Design Philosophy
+sections:
+  - id: context
+    title:
+      en: "A Geographical Perspective"
+      zh: "一种地理学视角"
+    description:
+      en: "Furry communities offer an opportunity to examine how identity, culture, and social relationships intersect with geography. From local gatherings and conventions to online platforms and transnational networks, these communities continuously negotiate the boundaries between physical and digital spaces."
+      zh: "Furry 社群为理解身份认同、文化实践与社会关系如何同地理空间相互交织提供了独特视角。从地方聚会、Furry 展会到线上平台与跨国社交网络，这些社群不断跨越和重塑物理空间与数字空间之间的边界。"
 
-  My design philosophy is rooted in **empathy** and **problem-solving**. I believe great design starts with understanding the 'why' – the user's needs, motivations, and pain points. I use research, iterative prototyping (often with tools like Figma), and user testing to ensure the solutions I build are truly effective.
+  - id: questions
+    title:
+      en: "Questions Worth Exploring"
+      zh: "值得探索的问题"
+    description:
+      en: "How do online relationships become geographically meaningful? What spatial patterns emerge from community events and social networks? How do mobility, accessibility, and place shape experiences of belonging? These questions connect the study of furry communities with broader debates in human geography and spatial science."
+      zh: "线上关系如何产生地理意义？社群活动与社会网络呈现出怎样的空间格局？流动性、可达性与地方如何影响人们的归属感？这些问题将 Furry 社群研究与人文地理学及空间科学中更广泛的学术讨论联系起来。"
 
-  I strive to create interfaces that feel effortless, where functionality and beauty work hand-in-hand. Whether I'm crafting pixel-perfect UIs or writing clean Vue.js/Nuxt.js code, my focus is always on creating value for the end-user.
-
-  ### What Drives Me
-
-  What keeps me excited about this work is the constant learning and the challenge of translating complex ideas into simple, elegant solutions. There's nothing more rewarding than seeing a design come to life and knowing it's making someone's digital interaction easier or more enjoyable.
-
-  ### Beyond the Screen
-
-  When I'm not designing or coding, you might find me exploring Boston's latest coffee shops, hiking nearby trails, or occasionally contributing to open-source projects.
-
-  Thanks for stopping by. Feel free to browse my [projects](/projects) or [get in touch](/#contact) if you'd like to collaborate!
-images:
-  - src: https://images.unsplash.com/photo-1744877478622-a78c7a3336f6?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-    alt: My coffee workspace
-  - src: https://images.unsplash.com/photo-1744429523595-2c06b8611242?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-    alt: My trip to Tokyo
+  - id: approach
+    title:
+      en: "An Open Approach to Research"
+      zh: "开放的研究方式"
+    description:
+      en: "We envision a network where different disciplines and methodological traditions can meet. Whether through spatial analysis, qualitative inquiry, digital methods, or interdisciplinary collaboration, our goal is to encourage careful, ethical, and meaningful research that takes communities and their experiences seriously."
+      zh: "我们希望建立一个能够连接不同学科与研究方法的交流网络。无论是空间分析、质性研究、数字研究方法，还是跨学科合作，我们都希望推动严谨、符合研究伦理且具有实际意义的学术探索，认真对待社群及其成员的经验。"

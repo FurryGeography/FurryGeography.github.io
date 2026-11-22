@@ -1,4 +1,6 @@
 {
+  "email": "Email",
+  "online": "Online",
   "nav": {
     "home": "Home",
     "about": "About",
@@ -6,15 +8,5 @@
     "research": "Research",
     "publications": "Publications",
     "collaborations": "Collaborations"
-  },
-  "home": {
-    "eyebrow": "An Independent Academic Network",
-    "title": "Furry Geography Network",
-    "description": "Connecting furry geographers and researchers through academic exchange and collaborative geographical research.",
-    "explore": "Explore the Network",
-    "research": "Research Interests",
-    "collaborations": "Open Collaborations",
-    "collaborationDescription": 
-    "We welcome collaboration across geography, GIScience, social sciences, and computational research related to furry communities."
   }
 }

@@ -1,0 +1,63 @@
+title: "Members"
+description: "Researchers and collaborators of Furry Geography Network."
+
+hero:
+  eyebrow:
+    en: "The Network"
+    zh: "研究网络"
+  title:
+    en: "Our People"
+    zh: "网络成员"
+  description:
+    en: "Meet the researchers and collaborators contributing to Furry Geography Network."
+    zh: "认识参与 Furry Geography Network 的研究者与合作成员。"
+
+researchers:
+  title:
+    en: "Researchers"
+    zh: "研究者"
+  description:
+    en: "Members engaged in geographical and interdisciplinary research."
+    zh: "从事地理学及相关跨学科研究的网络成员。"
+  empty:
+    en: "Researcher profiles will be added here."
+    zh: "研究者资料将在此陆续公布。"
+
+collaborators:
+  title:
+    en: "Collaborators"
+    zh: "合作成员"
+  description:
+    en: "Contributors and partners supporting research activities and interdisciplinary projects."
+    zh: "参与研究活动与跨学科项目的合作成员。"
+  empty:
+    en: "Collaborator profiles will be added here."
+    zh: "合作成员资料将在此陆续公布。"
+
+ui:
+  profile:
+    en: "Profile"
+    zh: "个人主页"
+  specialties:
+    en: "Research Interests"
+    zh: "研究兴趣"
+  back:
+    en: "All Members"
+    zh: "返回成员列表"
+  cv:
+    en: "View CV"
+    zh: "查看学术简历"
+
+join:
+  eyebrow:
+    en: "Get Involved"
+    zh: "参与研究网络"
+  title:
+    en: "Join Us"
+    zh: "加入我们"
+  description:
+    en: "Interested in geographical research on furry communities? We welcome opportunities for academic exchange and collaboration."
+    zh: "对 Furry 社群的地理学研究感兴趣吗？我们欢迎学术交流与合作研究。"
+  button:
+    en: "Explore Collaborations"
+    zh: "了解合作研究"

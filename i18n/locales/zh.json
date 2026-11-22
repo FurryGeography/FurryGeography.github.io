@@ -1,4 +1,6 @@
 {
+  "email": "电子邮箱",
+  "online": "个人链接",
   "nav": {
     "home": "首页",
     "about": "关于我们",
@@ -6,14 +8,5 @@
     "research": "研究方向",
     "publications": "学术成果",
     "collaborations": "合作研究"
-  },
-  "home": {
-    "eyebrow": "独立学术交流网络",
-    "title": "Furry 地理学研究网络",
-    "description": "连接从事地理学及相关研究的 Furry，促进学术交流，并推动 Furry 主题的地理学合作研究。",
-    "explore": "关于我们",
-    "research": "研究兴趣",
-    "collaborations": "开放合作项目",
-    "collaborationDescription": "我们欢迎来自地理学、地理信息科学、社会科学及计算研究等领域的研究者，共同开展与 Furry 社群相关的跨学科合作研究。"
   }
 }

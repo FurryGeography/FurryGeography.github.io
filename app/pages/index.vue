@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const { t } = useI18n()
 const { localize } = useLocalizedContent()
+const localePath = useLocalePath()
 
 const { data: page } = await useAsyncData(
   'index',
@@ -16,20 +16,9 @@ if (!page.value) {
 }
 
 useSeoMeta({
-  title: () => t('home.title'),
-  description: () => t('home.description')
+  title: () => localize(page.value?.hero.title),
+  description: () => localize(page.value?.hero.description)
 })
-
-const { locale } = useI18n()
-
-const { data: researchAreasData } = await useAsyncData(
-  'research-areas',
-  () => queryCollection('researchAreas').first()
-)
-
-const researchAreas = computed(
-  () => researchAreasData.value?.areas ?? []
-)
 </script>
 
 <template>
@@ -37,50 +26,47 @@ const researchAreas = computed(
     <!-- Hero -->
     <section class="mx-auto max-w-5xl px-6 pb-24 pt-28 md:pt-36">
       <p class="mb-6 text-xs font-medium uppercase tracking-widest text-muted">
-        {{ $t('home.eyebrow') }}
+        {{ localize(page.hero.eyebrow) }}
       </p>
 
       <h1 class="max-w-4xl text-5xl font-semibold tracking-tight md:text-7xl">
-        {{ $t('home.title') }}
+        {{ localize(page.hero.title) }}
       </h1>
 
       <p class="mt-8 max-w-2xl text-lg leading-8 text-muted">
-        	{{ $t('home.description') }}
+        {{ localize(page.hero.description) }}
       </p>
 
       <div class="mt-10">
         <UButton
-          to="/about"
-          :label="$t('home.explore')"
+          :to="localePath('/about')"
+          :label="localize(page.hero.explore)"
           color="neutral"
           size="lg"
         />
       </div>
     </section>
 
-    <!-- Research -->
-
+        
     <!-- Research -->
     <section class="mx-auto max-w-5xl px-6 pb-24">
       <div class="border-t border-default pt-10">
 
         <!-- Section Heading -->
-        <div
-          class="mb-8 flex items-end justify-between gap-4"
-        >
+        <div class="mb-8 flex items-end justify-between gap-4">
           <h2 class="text-3xl font-medium tracking-tight">
-            {{ $t('home.research') }}
+            {{ localize(page.research.title) }}
           </h2>
 
           <span class="font-mono text-xs text-muted">
-            {{ String(researchAreas.length).padStart(2, '0') }}
+            {{ String(page.research.areas.length).padStart(2, '0') }}
           </span>
         </div>
 
         <!-- Research List -->
         <div class="border-t border-default">
           <div
-            v-for="(area, index) in researchAreas"
+            v-for="(area, index) in page.research.areas"
             :key="area.id"
             class="grid grid-cols-[3rem_minmax(0,1fr)]
                   gap-4 border-b border-default py-8
@@ -88,9 +74,7 @@ const researchAreas = computed(
                   sm:gap-8"
           >
             <!-- Number -->
-            <span
-              class="pt-1 font-mono text-xs text-muted"
-            >
+            <span class="pt-1 font-mono text-xs text-muted">
               {{ String(index + 1).padStart(2, '0') }}
             </span>
 
@@ -100,17 +84,11 @@ const researchAreas = computed(
                     lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]
                     lg:gap-8"
             >
-              <h3
-                class="text-xl font-medium leading-snug
-                      text-highlighted"
-              >
+              <h3 class="text-xl font-medium leading-snug text-highlighted">
                 {{ localize(area.title) }}
               </h3>
 
-              <p
-                class="max-w-xl text-sm leading-7
-                      text-muted sm:text-base"
-              >
+              <p class="max-w-xl text-sm leading-7 text-muted sm:text-base">
                 {{ localize(area.description) }}
               </p>
             </div>
@@ -121,16 +99,15 @@ const researchAreas = computed(
     </section>
 
 
-
     <!-- Collaboration -->
     <section class="mx-auto max-w-5xl px-6 pb-28">
       <div class="border-t border-default pt-10">
         <h2 class="text-3xl font-medium">
-          {{ $t('home.collaborations') }}
+          {{ localize(page.collaborations.title) }}
         </h2>
 
         <p class="mt-6 max-w-2xl leading-7 text-muted">
-          {{ $t('home.collaborationDescription') }}
+          {{ localize(page.collaborations.description) }}
         </p>
       </div>
     </section>

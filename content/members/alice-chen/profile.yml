@@ -1,0 +1,45 @@
+slug: "alice-chen"
+group: "researcher"
+order: 1
+
+name: "Alice Chen"
+email: "researcher@example.com"
+links:
+  - label: "Google Scholar"
+    url: "https://scholar.google.com/"
+
+  - label: "ORCID"
+    url: "https://orcid.org/"
+
+  - label: "LinkedIn"
+    url: "https://www.linkedin.com/"
+photo: "photo.webp"
+cv: "cv.pdf"
+
+role:
+  en: "Graduate Researcher"
+  zh: "研究生"
+
+affiliation:
+  en: "Example University"
+  zh: "示例大学"
+
+interests:
+  en: "Digital Geography, GIScience"
+  zh: "数字地理学、地理信息科学"
+
+summary:
+  en: "Researching digital communities and spatial social networks."
+  zh: "研究数字社群与空间社会网络。"
+
+bio:
+  en: |
+    Alice Chen is a researcher interested in
+    digital geographies and online communities.
+
+    Her research focuses on social networks,
+    geographical relationships, and GIScience.
+  zh: |
+    Alice Chen 关注数字地理学与线上社群。
+
+    其研究主要涉及社会网络、地理联系及地理信息科学。

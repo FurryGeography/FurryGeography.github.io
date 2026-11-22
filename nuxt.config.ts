@@ -48,13 +48,25 @@ export default defineNuxtConfig({
     zeroRuntime: true
   },
 
-  prerender: {
-    routes: [
-      '/',
-      '/zh'
+  nitro: {
+    publicAssets: [
+      {
+        dir: './content/members',
+        baseURL: '/member-assets'
+      }
     ],
-    crawlLinks: true
+
+    prerender: {
+      routes: [
+        '/',
+        '/zh',
+        '/members',
+        '/zh/members'
+      ],
+      crawlLinks: true
+    }
   },
+
 
   i18n: {
     locales: [
