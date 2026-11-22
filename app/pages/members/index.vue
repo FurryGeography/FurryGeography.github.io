@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { formatMemberName, memberComparator } from '~/utils/memberName'
+const { locale } = useI18n()
 const { localize } = useLocalizedContent()
 const localePath = useLocalePath()
 const brokenPhotos = ref<Record<string, boolean>>({})
@@ -22,11 +24,7 @@ if (!page.value) {
 }
 
 const sortedProfiles = computed(() =>
-  [...(profiles.value || [])].sort(
-    (a, b) =>
-      (a.order ?? 9999) - (b.order ?? 9999)
-      || a.name.localeCompare(b.name)
-  )
+  [...(profiles.value ?? [])].sort(memberComparator(locale.value))
 )
 
 const groups = computed(() => {

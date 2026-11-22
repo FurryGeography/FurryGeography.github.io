@@ -40,7 +40,11 @@ const memberProfileSchema = z.object({
   group: z.enum(['researcher', 'collaborator']),
   order: z.number().int().optional(),
 
-  name: z.string(),
+  givenName: z.string().optional(),
+  middleName: z.string().optional(),
+  familyName: z.string().optional(),
+  displayName: localizedTextSchema.optional(),
+  name: z.string().optional(),
   role: localizedTextSchema.optional(),
   affiliation: localizedTextSchema.optional(),
   interests: localizedTextSchema.optional(),

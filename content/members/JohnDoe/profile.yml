@@ -1,7 +1,12 @@
 group: "collaborator"
-order: 1
+# Default order is by name, this will override
+# order: 1
 
-name: "John Doe"
+# Ordered by this
+givenName: "John"
+familyName: "Doe"
+displayName:
+  zh: "测试"
 
 role:
   en: "Research Collaborator"

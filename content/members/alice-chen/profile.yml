@@ -1,7 +1,13 @@
 group: "researcher"
-order: 1
+# Default order is by name, this will override
+# order: 1
 
-name: "Alice Chen"
+# Ordered by this
+givenName: "Test"
+familyName: "Test"
+displayName:
+  zh: "测试"
+
 email: "researcher@example.com"
 links:
   - label: "Google Scholar"
@@ -35,12 +41,10 @@ summary:
 
 bio:
   en: |
-    Alice Chen is a researcher interested in
-    digital geographies and online communities.
+    Is a researcher interested in digital geographies and online communities.
 
-    Her research focuses on social networks,
-    geographical relationships, and GIScience.
+    Her research focuses on social networks, geographical relationships, and GIScience.
   zh: |
-    Alice Chen 关注数字地理学与线上社群。
+    关注数字地理学与线上社群。
 
     其研究主要涉及社会网络、地理联系及地理信息科学。

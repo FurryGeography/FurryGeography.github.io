@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import { formatMemberName } from '~/utils/memberName'
 const route = useRoute()
 const localePath = useLocalePath()
 const { localize } = useLocalizedContent()
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const photoFailed = ref(false)
 
 const slug = computed(() => String(route.params.slug))
@@ -28,7 +29,7 @@ if (!member.value || member.value.profileUrl) {
 }
 
 useSeoMeta({
-  title: () => member.value?.name,
+  title: () => member.value ? formatMemberName(member.value, locale.value) : undefined,
   description: () => localize(member.value?.summary)
 })
 
@@ -66,7 +67,7 @@ const bioParagraphs = computed(() => {
             <img
               v-if="member.photo && !photoFailed"
               :src="`/member-assets/${member.slug}/${member.photo}`"
-              :alt="member.name"
+              :alt="formatMemberName(member, locale)"
               class="h-full w-full object-cover"
               @error="photoFailed = true"
             >
@@ -123,7 +124,7 @@ const bioParagraphs = computed(() => {
         <!-- Right: context -->
         <div>
           <h1 class="text-4xl font-semibold tracking-tight md:text-5xl">
-            {{ member.name }}
+            {{ formatMemberName(member, locale) }}
           </h1>
 
           <p v-if="member.role" class="mt-5 text-lg">
