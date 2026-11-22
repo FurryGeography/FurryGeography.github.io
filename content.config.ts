@@ -36,7 +36,7 @@ const memberGroupSchema = z.object({
 })
 
 const memberProfileSchema = z.object({
-  slug: z.string().regex(/^[a-z0-9-]+$/),
+  slug: z.string().regex(/^[a-z0-9-]+$/i),
   group: z.enum(['researcher', 'collaborator']),
   order: z.number().int().optional(),
 

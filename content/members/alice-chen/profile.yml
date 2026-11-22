@@ -12,7 +12,9 @@ links:
 
   - label: "LinkedIn"
     url: "https://www.linkedin.com/"
-# photo: ""
+    
+# Photo is optional, default is photo.jpg
+# photo: "photo.jpg"
 cv: "cv.pdf"
 
 role:

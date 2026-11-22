@@ -97,7 +97,7 @@ export default defineNuxtConfig({
       // Get the name of the parent directory of profile.yml
       const slug = file.id.split(/[/\\:]/).at(-2)
 
-      if (!slug || !/^[a-z0-9-]+$/.test(slug)) {
+      if (!slug || !/^[a-z0-9-]+$/i.test(slug)) {
         throw new Error(`Invalid member directory name: ${file.id}`)
       }
 
