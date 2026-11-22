@@ -5,7 +5,7 @@ const localizedTextSchema = z.record(z.string(), z.string())
 // Researcher public schema
 const memberProfileSchema = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/i),
-  group: z.enum(['researcher', 'collaborator']),
+  group: z.enum(['researcher', 'collaborator', 'template']),
   order: z.number().int().optional(),
 
   givenName: z.string().optional(),

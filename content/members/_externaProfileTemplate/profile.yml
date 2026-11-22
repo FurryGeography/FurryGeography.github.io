@@ -1,4 +1,4 @@
-group: "researcher"
+group: "template"
 # Default order is by name, this will override
 # order: 1
 
@@ -6,7 +6,7 @@ group: "researcher"
 givenName: "Test"
 familyName: "Test"
 displayName:
-  zh: "测试"
+  zh: "模板"
 
 email: "researcher@example.com"
 links:
