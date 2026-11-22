@@ -69,13 +69,14 @@ export default defineNuxtConfig({
 
       content.slug = slug
       if (!content.photo) {
-        const defaultPhoto = new URL(
-          `./content/members/${slug}/photo.jpg`,
-          import.meta.url
+        const defaultPhoto = [
+          'photo.jpg', 'photo.jpeg', 'photo.png', 'photo.svg', 'photo.webp'
+        ].find(filename =>
+          existsSync(new URL(`./content/members/${slug}/${filename}`, import.meta.url))
         )
 
-        if (existsSync(defaultPhoto)) {
-          content.photo = 'photo.jpg'
+        if (defaultPhoto) {
+          content.photo = defaultPhoto
         }
       }
     }

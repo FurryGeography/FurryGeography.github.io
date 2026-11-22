@@ -20,7 +20,7 @@ const memberProfileSchema = z.object({
   bio: localizedTextSchema.optional(),
 
   photo: z.string()
-    .regex(/^[a-zA-Z0-9._-]+\.(webp|png|jpg|jpeg)$/i)
+    .regex(/^[a-zA-Z0-9._-]+\.(webp|png|jpg|jpeg|svg)$/i)
     .optional(),
 
   cv: z.string()

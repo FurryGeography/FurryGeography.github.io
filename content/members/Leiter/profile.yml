@@ -1,0 +1,50 @@
+group: "researcher"
+# Default order is by name, this will override
+# order: 1
+
+# Ordered by this
+givenName: "Leiter"
+familyName: "Stosszhan"
+displayName:
+  zh: "獠魁"
+
+# email: "researcher@example.com"
+links:
+  - label: "X"
+    url: "https://x.com/LeiterStosszahn"  
+    
+# Photo and cv is optional, default is photo.jpg
+# photo: "photo.jpg"
+# cv: "cv.pdf"
+
+role:
+  en: "PhD Student"
+  zh: "博士生"
+
+affiliation:
+  en: "University of Tennessee, Knoxville"
+  zh: "田纳西大学诺克斯维尔分校"
+
+summary:
+  en: "Researching transportation geography."
+  zh: "研究交通地理。"
+
+interests:
+  en: "Spatial Analysis, Transportation, Mobility, Socio-Spatial Implications"
+  zh: "空间分析，交通分析，移动性 (Mobility)，社会时空影响"
+
+bio:
+  en: |
+      I tend to explore the deeper theoretical connections between transportation and mobility.
+      My research focuses on how the structure of networks, the patterns of flow,
+      and the logic of spatial organization together explain the ways people and places are linked or kept apart.
+
+      I work with spatial analysis and network analysis,
+      always circling back to one central question:
+      How do the fundamental properties of transport systems govern who can move,
+      where they can reach, and what they can access?.
+  zh: |
+    研究聚焦于交通地理更深层的理论关联。
+    研究重点是网络结构、流动规律与空间组织的逻辑，希望能给了解这些要素如何共同解释人、地、物的关系。
+
+    主要借助空间分析和网络分析等方法，了解交通系统的基本属性。
