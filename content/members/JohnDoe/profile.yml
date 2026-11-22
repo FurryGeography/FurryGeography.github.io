@@ -1,8 +1,7 @@
-slug: "bob-li"
 group: "collaborator"
 order: 1
 
-name: "Bob Li"
+name: "John Doe"
 
 role:
   en: "Research Collaborator"
@@ -16,5 +15,6 @@ summary:
   en: "Contributing expertise in spatial analysis."
   zh: "提供空间分析方面的专业支持。"
 
-photo: "photo.jpg"
+# Photo is optional, default is photo.jpg
+# photo: "photo.jpg"
 profileUrl: "https://example.com"

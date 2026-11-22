@@ -32,7 +32,7 @@ const memberGroupSchema = z.object({
       label: z.string(),
       url: z.string().url()
     })
-  ).optional(),
+  ).optional()
 })
 
 const memberProfileSchema = z.object({
@@ -55,7 +55,12 @@ const memberProfileSchema = z.object({
     .regex(/^[a-zA-Z0-9._-]+\.pdf$/i)
     .optional(),
 
-  profileUrl: z.string().url().optional()
+  profileUrl: z.string().url().optional(),
+  email: z.string().email().optional(),
+  links: z.array(z.object({
+    label: z.string(),
+    url: z.string().url()
+  })).optional()
 })
 
 

@@ -1,3 +1,5 @@
+import { existsSync } from 'node:fs'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -67,7 +69,6 @@ export default defineNuxtConfig({
     }
   },
 
-
   i18n: {
     locales: [
       {
@@ -87,5 +88,30 @@ export default defineNuxtConfig({
     strategy: 'prefix_except_default',
     detectBrowserLanguage: false,
     baseUrl: 'https://furrygeography.github.io'
-  }
+  },
+
+  hooks: {
+    'content:file:afterParse'({ collection, file, content }) {
+      if (collection.name !== 'memberProfiles') return
+
+      // Get the name of the parent directory of profile.yml
+      const slug = file.id.split(/[/\\:]/).at(-2)
+
+      if (!slug || !/^[a-z0-9-]+$/.test(slug)) {
+        throw new Error(`Invalid member directory name: ${file.id}`)
+      }
+
+      content.slug = slug
+      if (!content.photo) {
+        const defaultPhoto = new URL(
+          `./content/members/${slug}/photo.jpg`,
+          import.meta.url
+        )
+
+        if (existsSync(defaultPhoto)) {
+          content.photo = 'photo.jpg'
+        }
+      }
+    }
+  },
 })
