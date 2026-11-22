@@ -3,38 +3,7 @@ import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
 const localizedTextSchema = z.record(z.string(), z.string())
 
-const imageSchema = z.object({
-  src: z.string().editor({ input: 'media' }),
-  alt: z.string()
-})
-
 // Researcher public schema
-const memberSchema = z.object({
-  id: z.string().regex(/^[a-z0-9-]+$/),
-  name: z.string(),
-  role: localizedTextSchema.optional(),
-  affiliation: localizedTextSchema.optional(),
-  interests: localizedTextSchema.optional(),
-  image: z.string().optional(),
-  email: z.string().email().optional(),
-  profileUrl: z.string().url().optional(),
-  bio: localizedTextSchema.optional()
-})
-
-const memberGroupSchema = z.object({
-  title: localizedTextSchema,
-  description: localizedTextSchema,
-  empty: localizedTextSchema,
-  people: z.array(memberSchema),
-  email: z.string().email().optional(),
-  links: z.array(
-    z.object({
-      label: z.string(),
-      url: z.string().url()
-    })
-  ).optional()
-})
-
 const memberProfileSchema = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/i),
   group: z.enum(['researcher', 'collaborator']),

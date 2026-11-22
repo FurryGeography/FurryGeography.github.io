@@ -102,7 +102,7 @@ useSeoMeta({
                 <img
                 v-if="member.photo && !brokenPhotos[member.slug]"
                 :src="`/member-assets/${member.slug}/${member.photo}`"
-                :alt="member.name"
+                :alt="formatMemberName(member, locale)"
                 loading="lazy"
                 class="h-full w-full object-cover"
                 @error="brokenPhotos[member.slug] = true"
@@ -122,7 +122,7 @@ useSeoMeta({
             <!-- Member Information -->
             <div class="flex min-w-0 flex-1 flex-col">
               <h3 class="text-lg font-semibold text-highlighted">
-                {{ member.name }}
+                {{ formatMemberName(member, locale) }}
               </h3>
 
               <p

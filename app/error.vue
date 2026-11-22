@@ -16,23 +16,7 @@ useSeoMeta({
   description: 'We are sorry but this page could not be found.'
 })
 
-const [{ data: navigation }, { data: files }] = await Promise.all([
-  useAsyncData('navigation', () => {
-    return Promise.all([
-      queryCollectionNavigation('blog')
-    ])
-  }, {
-    transform: data => data.flat()
-  }),
-  useLazyAsyncData('search', () => {
-    return Promise.all([
-      queryCollectionSearchSections('blog')
-    ])
-  }, {
-    server: false,
-    transform: data => data.flat()
-  })
-])
+const navLinks = useNavLinks()
 </script>
 
 <template>
@@ -51,8 +35,6 @@ const [{ data: navigation }, { data: files }] = await Promise.all([
 
     <ClientOnly>
       <LazyUContentSearch
-        :files="files"
-        :navigation="navigation"
         :links="navLinks"
         :fuse="{ resultLimit: 42 }"
       />
