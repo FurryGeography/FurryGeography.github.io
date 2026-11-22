@@ -165,7 +165,7 @@ onMounted(async () => {
 
   if (disposed) return
 
-  const params = `token=${encodeURIComponent(token)}&tmsIds=w`
+  const params = 'token=6e2c06344f8697689935f49ef3967f1e&tmsIds=w'
 
   const street = L.tileLayer(
     useChinaMap
@@ -183,10 +183,11 @@ onMounted(async () => {
 
   const satellite = L.tileLayer(
     useChinaMap
-      ? `https://api.open.geovisearth.com/pj/base/v1/img/{z}/{x}/{y}?${params}&format=webp`
+      ? `https://api.open.geovisearth.com/pj/base/v1/2025/{z}/{x}/{y}?${params}&format=webp`
       : 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
     {
-      maxZoom: 17,
+      maxZoom: 16,
+      tileSize: 256,
       noWrap: true,
       attribution: useChinaMap
         ? '© Geovisearth'
@@ -226,7 +227,7 @@ onBeforeUnmount(() => {
     <div
       ref="canvas"
       :aria-label="t('memberLocations')"
-      class="relative isolate mt-6 h-96 overflow-hidden rounded-lg border border-default sm:h-[30rem]"
+      class="relative isolate mt-6 h-[min(70vw,288px)] overflow-hidden rounded-lg border border-default sm:h-[30rem]"
     />
   </section>
 </template>

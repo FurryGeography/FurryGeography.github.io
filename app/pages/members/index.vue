@@ -208,6 +208,13 @@ useSeoMeta({
       </div>
     </section>
 
+    <!-- Map -->
+    <MembersLocationMap
+      v-if="mappedMembers.length"
+      :key="locale"
+      :members="mappedMembers"
+    />
+
     <!-- Join Us -->
     <section class="mx-auto max-w-6xl px-6 pb-28">
       <div class="border-t border-default pt-10">
@@ -237,12 +244,5 @@ useSeoMeta({
         </div>
       </div>
     </section>
-    
-    <!-- Map -->
-    <MembersLocationMap
-      v-if="mappedMembers.length"
-      :key="locale"
-      :members="mappedMembers"
-    />
   </UPage>
 </template>
