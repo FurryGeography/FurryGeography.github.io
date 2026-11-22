@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { formatMemberName, memberComparator } from '~/utils/memberName'
+
 const { locale } = useI18n()
 const { localize } = useLocalizedContent()
 const localePath = useLocalePath()
@@ -99,14 +100,14 @@ useSeoMeta({
             <div
               class="h-36 w-28 shrink-0 overflow-hidden rounded-md bg-elevated sm:h-40 sm:w-32"
             >
-                <img
+              <img
                 v-if="member.photo && !brokenPhotos[member.slug]"
                 :src="`/member-assets/${member.slug}/${member.photo}`"
                 :alt="formatMemberName(member, locale)"
                 loading="lazy"
                 class="h-full w-full object-cover"
                 @error="brokenPhotos[member.slug] = true"
-                >
+              >
 
               <div
                 v-else
@@ -153,11 +154,11 @@ useSeoMeta({
                 {{ localize(member.summary) }}
                 <!-- Optional Email -->
                 <a
-                v-if="member.email"
-                :href="`mailto:${member.email}`"
-                class="mt-3 block w-fit break-all text-sm text-muted hover:text-highlighted hover:underline"
+                  v-if="member.email"
+                  :href="`mailto:${member.email}`"
+                  class="mt-3 block w-fit break-all text-sm text-muted hover:text-highlighted hover:underline"
                 >
-                {{ member.email }}
+                  {{ member.email }}
                 </a>
               </p>
 
@@ -181,7 +182,10 @@ useSeoMeta({
           </article>
         </div>
 
-        <p v-else class="py-8 text-sm text-muted">
+        <p
+          v-else
+          class="py-8 text-sm text-muted"
+        >
           {{ localize(group.empty) }}
         </p>
       </div>

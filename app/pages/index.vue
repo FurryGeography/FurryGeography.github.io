@@ -47,11 +47,9 @@ useSeoMeta({
       </div>
     </section>
 
-        
     <!-- Research -->
     <section class="mx-auto max-w-5xl px-6 pb-24">
       <div class="border-t border-default pt-10">
-
         <!-- Section Heading -->
         <div class="mb-8 flex items-end justify-between gap-4">
           <h2 class="text-3xl font-medium tracking-tight">
@@ -94,10 +92,8 @@ useSeoMeta({
             </div>
           </div>
         </div>
-
       </div>
     </section>
-
 
     <!-- Collaboration -->
     <section class="mx-auto max-w-5xl px-6 pb-28">

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { formatMemberName } from '~/utils/memberName'
+
 const route = useRoute()
 const localePath = useLocalePath()
 const { localize } = useLocalizedContent()
@@ -54,7 +55,10 @@ const bioParagraphs = computed(() => {
         :to="localePath('/members')"
         class="mb-14 inline-flex items-center gap-2 text-sm text-muted hover:text-highlighted"
       >
-        <UIcon name="i-lucide-arrow-left" class="size-4" />
+        <UIcon
+          name="i-lucide-arrow-left"
+          class="size-4"
+        />
         {{ localize(page.ui.back) }}
       </NuxtLink>
 
@@ -84,7 +88,10 @@ const bioParagraphs = computed(() => {
           </div>
 
           <!-- Optional Email -->
-          <div v-if="member.email" class="mt-8">
+          <div
+            v-if="member.email"
+            class="mt-8"
+          >
             <h2 class="text-xs font-semibold uppercase tracking-widest text-muted">
               {{ t('email') }}
             </h2>
@@ -98,7 +105,10 @@ const bioParagraphs = computed(() => {
           </div>
 
           <!-- Optional Links -->
-          <div v-if="member.links?.length" class="mt-8">
+          <div
+            v-if="member.links?.length"
+            class="mt-8"
+          >
             <h2 class="text-xs font-semibold uppercase tracking-widest text-muted">
               {{ t('online') }}
             </h2>
@@ -127,15 +137,24 @@ const bioParagraphs = computed(() => {
             {{ formatMemberName(member, locale) }}
           </h1>
 
-          <p v-if="member.role" class="mt-5 text-lg">
+          <p
+            v-if="member.role"
+            class="mt-5 text-lg"
+          >
             {{ localize(member.role) }}
           </p>
 
-          <p v-if="member.affiliation" class="mt-2 text-muted">
+          <p
+            v-if="member.affiliation"
+            class="mt-2 text-muted"
+          >
             {{ localize(member.affiliation) }}
           </p>
 
-          <p v-if="member.summary" class="mt-6 leading-7 text-muted">
+          <p
+            v-if="member.summary"
+            class="mt-6 leading-7 text-muted"
+          >
             {{ localize(member.summary) }}
           </p>
 
@@ -160,9 +179,15 @@ const bioParagraphs = computed(() => {
             rel="noopener noreferrer"
             class="mt-8 inline-flex items-center gap-2 text-sm font-medium text-highlighted hover:underline"
           >
-            <UIcon name="i-lucide-file-text" class="size-4" />
+            <UIcon
+              name="i-lucide-file-text"
+              class="size-4"
+            />
             {{ localize(page.ui.cv) }}
-            <UIcon name="i-lucide-arrow-up-right" class="size-4" />
+            <UIcon
+              name="i-lucide-arrow-up-right"
+              class="size-4"
+            />
           </a>
         </div>
       </header>
@@ -182,7 +207,6 @@ const bioParagraphs = computed(() => {
           </p>
         </div>
       </section>
-
     </article>
   </UPage>
 </template>

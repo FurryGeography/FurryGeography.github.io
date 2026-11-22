@@ -37,19 +37,6 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2026-06-30',
 
-  eslint: {
-    config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
-    }
-  },
-
-  ogImage: {
-    zeroRuntime: true
-  },
-
   nitro: {
     publicAssets: [
       {
@@ -67,27 +54,6 @@ export default defineNuxtConfig({
       ],
       crawlLinks: true
     }
-  },
-
-  i18n: {
-    locales: [
-      {
-        code: 'en',
-        name: 'English',
-        language: 'en-US',
-        file: 'en.json'
-      },
-      {
-        code: 'zh',
-        name: '简体中文',
-        language: 'zh-CN',
-        file: 'zh.json'
-      }
-    ],
-    defaultLocale: 'en',
-    strategy: 'prefix_except_default',
-    detectBrowserLanguage: false,
-    baseUrl: 'https://furrygeography.github.io'
   },
 
   hooks: {
@@ -114,4 +80,38 @@ export default defineNuxtConfig({
       }
     }
   },
+
+  eslint: {
+    config: {
+      stylistic: {
+        commaDangle: 'never',
+        braceStyle: '1tbs'
+      }
+    }
+  },
+
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+        language: 'en-US',
+        file: 'en.json'
+      },
+      {
+        code: 'zh',
+        name: '简体中文',
+        language: 'zh-CN',
+        file: 'zh.json'
+      }
+    ],
+    defaultLocale: 'en',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: false,
+    baseUrl: 'https://furrygeography.github.io'
+  },
+
+  ogImage: {
+    zeroRuntime: true
+  }
 })

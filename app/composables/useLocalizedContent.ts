@@ -7,10 +7,10 @@ export const useLocalizedContent = () => {
     if (!content) return ''
 
     return (
-      content[locale.value] ||
-      content[defaultLocale] ||
-      Object.values(content).find(Boolean) ||
-      ''
+      content[locale.value]
+      || content[defaultLocale]
+      || Object.values(content).find(Boolean)
+      || ''
     )
   }
 

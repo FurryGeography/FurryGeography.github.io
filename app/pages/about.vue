@@ -23,7 +23,6 @@ useSeoMeta({
 <template>
   <UPage v-if="page">
     <article class="mx-auto max-w-3xl px-6 pb-32 pt-28 md:pt-36">
-
       <!-- Introduction -->
       <header class="mb-20">
         <p
@@ -70,7 +69,6 @@ useSeoMeta({
           </p>
         </section>
       </div>
-
     </article>
   </UPage>
 </template>

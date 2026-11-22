@@ -1,4 +1,3 @@
-
 <script setup lang="ts">
 import type {
   NavigationMenuItem,
@@ -47,7 +46,6 @@ const languageItems = computed<DropdownMenuItem[]>(() =>
     }
   })
 )
-
 
 // Small screen
 const mobileItems = computed<DropdownMenuItem[]>(() =>

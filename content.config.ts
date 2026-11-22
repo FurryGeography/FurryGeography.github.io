@@ -1,4 +1,3 @@
-
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
 const localizedTextSchema = z.record(z.string(), z.string())
@@ -36,7 +35,6 @@ const memberProfileSchema = z.object({
   })).optional()
 })
 
-
 export default defineContentConfig({
   collections: {
     index: defineCollection({
@@ -65,7 +63,7 @@ export default defineContentConfig({
         })
       })
     }),
-    
+
     about: defineCollection({
       type: 'page',
       source: 'about.yml',
@@ -84,7 +82,7 @@ export default defineContentConfig({
         )
       })
     }),
-    
+
     members: defineCollection({
       type: 'page',
       source: 'members/index.yml',
@@ -117,7 +115,7 @@ export default defineContentConfig({
           button: localizedTextSchema
         }),
         email: localizedTextSchema,
-        online: localizedTextSchema,
+        online: localizedTextSchema
       })
     }),
 
