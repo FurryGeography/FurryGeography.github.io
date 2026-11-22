@@ -122,10 +122,17 @@ const bioParagraphs = computed(() => {
                 rel="noopener noreferrer"
                 class="inline-flex max-w-full items-center gap-1 text-sm text-highlighted hover:underline"
               >
+                <UIcon
+                  v-if="link.icon"
+                  :name="link.icon"
+                  class="size-4 shrink-0"
+                  aria-hidden="true"
+                />
                 <span class="break-words">{{ link.label }}</span>
                 <UIcon
                   name="i-lucide-arrow-up-right"
                   class="size-3 shrink-0"
+                  aria-hidden="true"
                 />
               </a>
             </div>

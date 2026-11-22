@@ -31,7 +31,8 @@ const memberProfileSchema = z.object({
   email: z.string().email().optional(),
   links: z.array(z.object({
     label: z.string(),
-    url: z.string().url()
+    url: z.string().url(),
+    icon: z.string().optional()
   })).optional()
 })
 
@@ -123,7 +124,28 @@ export default defineContentConfig({
       type: 'data',
       source: 'members/*/profile.yml',
       schema: memberProfileSchema
-    })
+    }),
+
+    collaborations: defineCollection({
+      type: 'page',
+      source: 'collaborations.yml',
+      schema: z.object({
+        hero: z.object({
+          title: localizedTextSchema,
+          description: localizedTextSchema
+        }),
+        email: z.string().email(),
+        emailButton: localizedTextSchema,
+        subject: localizedTextSchema,
+        contactsTitle: localizedTextSchema,
+        channels: z.array(z.object({
+          icon: z.string().optional(),
+          label: localizedTextSchema,
+          description: localizedTextSchema,
+          url: z.string()
+        }))
+      })
+    }),
 
   }
 })

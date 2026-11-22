@@ -1,0 +1,36 @@
+hero:
+  title:
+    en: Collaborations
+    zh: 合作交流
+  description:
+    en: Have a research question about furry communities, places, or mobility? Tell us what you would like to study and how we could work together.
+    zh: 如果你想研究 Furry 社群、地方或流动性，欢迎分享你的研究问题，以及你希望一起开展的工作。
+
+email: "2379662972@qq.com"
+emailButton:
+  en: Email us
+  zh: 发邮件
+subject:
+  en: Research collaboration inquiry
+  zh: 研究合作咨询
+contactsTitle:
+  en: Other ways to get in touch
+  zh: 其他联系方式
+
+channels:
+  - icon: i-simple-icons-github
+    label:
+      en: GitHub Issues
+      zh: GitHub Issues
+    description:
+      en: Report a website issue or suggest an improvement.
+      zh: 反馈网站问题或提出改进建议。
+    url: https://github.com/FurryGeography/FurryGeography.github.io/issues
+  - icon: i-lucide-users
+    label:
+      en: Member directory
+      zh: 成员目录
+    description:
+      en: Find a researcher and the contact details they share.
+      zh: 查找研究者及其公开的个人联系方式。
+    url: /members
