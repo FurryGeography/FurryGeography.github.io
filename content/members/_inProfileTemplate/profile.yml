@@ -1,18 +1,28 @@
-group: "researcher"
+group: "collaborator"
 # Default order is by name, this will override
 # order: 1
 
 # Ordered by this
-givenName: "Leiter"
-familyName: "Stosszhan"
+givenName: "Test"
+familyName: "Test"
 displayName:
-  zh: "獠魁"
+  zh: "模板"
+# Nick name is optional
+# nickname:
+#   en: "Nick Name"
+#   zh: "圈名"
 
+# Coodinate is optional
+# coordinates:
+#   latitude: 35.9606
+#   longitude: -83.9207
+
+# Links and email are optional
 # email: "researcher@example.com"
-links:
-  - label: "X"
-    icon: "i-simple-icons-x"
-    url: "https://x.com/LeiterStosszahn"  
+# links:
+#   - label: "X"
+#     icon: "i-simple-icons-x"
+#     url: "https://x.com/LeiterStosszahn"  
     
 # Photo and cv is optional, default is photo.jpg
 # photo: "photo.jpg"

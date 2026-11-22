@@ -1,0 +1,33 @@
+group: "researcher"
+
+givenName: "Dingkang"
+familyName: "Teng"
+displayName:
+  zh: "滕定康"
+nickname:
+  en: "Leiter"
+  zh: "獠魁"
+
+email: "dteng1@vols.utk.edu"
+
+coordinates:
+  latitude: 35.9606
+  longitude: -83.9207
+
+role:
+  en: "PhD Student"
+  zh: "博士生"
+
+affiliation:
+  en: "University of Tennessee, Knoxville"
+  zh: "田纳西大学诺克斯维尔分校"
+
+summary:
+  en: "Researching transportation geography."
+  zh: "研究交通地理。"
+
+interests:
+  en: "Spatial Analysis, Transportation, Mobility, Socio-Spatial Implications"
+  zh: "空间分析，交通分析，移动性 (Mobility)，社会时空影响"
+
+profileUrl: "https://dingkangteng.github.io"

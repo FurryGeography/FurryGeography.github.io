@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { formatMemberName, memberComparator } from '~/utils/memberName'
+import { formatMemberHeading, formatMemberName, memberComparator } from '~/utils/memberName'
 
 const { locale } = useI18n()
 const { localize } = useLocalizedContent()
@@ -47,6 +47,23 @@ const groups = computed(() => {
       )
     }
   ]
+})
+
+const mappedMembers = computed(() => {
+  const visibleMembers = groups.value.flatMap(group => group.people)
+
+  return visibleMembers.flatMap((member) => {
+    if (!member.coordinates) return []
+
+    return [{
+      latitude: member.coordinates.latitude,
+      longitude: member.coordinates.longitude,
+      slug: member.slug,
+      name: formatMemberHeading(member, locale.value) || member.slug,
+      href: member.profileUrl || localePath(`/members/${member.slug}`),
+      external: Boolean(member.profileUrl)
+    }]
+  })
 })
 
 useSeoMeta({
@@ -123,7 +140,7 @@ useSeoMeta({
             <!-- Member Information -->
             <div class="flex min-w-0 flex-1 flex-col">
               <h3 class="text-lg font-semibold text-highlighted">
-                {{ formatMemberName(member, locale) }}
+                {{ formatMemberHeading(member, locale) }}
               </h3>
 
               <p
@@ -220,5 +237,12 @@ useSeoMeta({
         </div>
       </div>
     </section>
+    
+    <!-- Map -->
+    <MembersLocationMap
+      v-if="mappedMembers.length"
+      :key="locale"
+      :members="mappedMembers"
+    />
   </UPage>
 </template>

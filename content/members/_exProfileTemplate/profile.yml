@@ -8,17 +8,25 @@ familyName: "Doe"
 displayName:
   zh: "模板"
 
+# Coodinate is optional
+# coordinates:
+#   latitude: 35.9606
+#   longitude: -83.9207
+
+# Email is optional
+# email: "researcher@example.com"
+
 role:
   en: "Research Collaborator"
   zh: "研究合作成员"
+  
+summary:
+  en: "Contributing expertise in spatial analysis."
+  zh: "提供空间分析方面的专业支持。"
 
 interests:
   en: "Spatial Data Analysis"
   zh: "空间数据分析"
-
-summary:
-  en: "Contributing expertise in spatial analysis."
-  zh: "提供空间分析方面的专业支持。"
 
 # Photo is optional, default is photo.jpg
 # photo: "photo.jpg"

@@ -31,6 +31,8 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build static website
+        env:
+            VITE_GEOVIS_TOKEN: ${{ vars.VITE_GEOVIS_TOKEN }}
         run: pnpm exec nuxt build --preset github_pages
 
       - name: Upload website

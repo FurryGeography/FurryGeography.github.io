@@ -3,6 +3,7 @@ interface MemberName {
   middleName?: string | null
   familyName?: string | null
   displayName?: Record<string, string> | null
+  nickname?: Record<string, string> | null
   name?: string | null
 }
 
@@ -19,6 +20,28 @@ export function formatMemberName(member: MemberName, locale: string): string {
 
   const parts = [member.givenName, member.middleName, member.familyName]
   return parts.filter(Boolean).join(' ') || member.name || ''
+}
+
+export function formatMemberHeading(member: MemberName, locale: string): string {
+  const name = formatMemberName(member, locale)
+  const language = locale.split('-')[0] || locale
+  const nicknames = member.nickname ?? {}
+
+  const nickname = [
+    nicknames[locale],
+    nicknames[language],
+    nicknames.en,
+    ...Object.values(nicknames)
+  ]
+    .map(value => value?.trim())
+    .find(Boolean)
+
+  if (!nickname || nickname === name.trim()) return name
+  if (!name) return nickname
+
+  return language === 'zh'
+    ? `${name}（${nickname}）`
+    : `${name} (${nickname})`
 }
 
 export function memberComparator(locale: string) {

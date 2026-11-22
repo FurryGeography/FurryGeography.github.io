@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { formatMemberName } from '~/utils/memberName'
+import { formatMemberHeading, formatMemberName } from '~/utils/memberName'
 
 const route = useRoute()
 const localePath = useLocalePath()
@@ -141,7 +141,7 @@ const bioParagraphs = computed(() => {
         <!-- Right: context -->
         <div>
           <h1 class="text-4xl font-semibold tracking-tight md:text-5xl">
-            {{ formatMemberName(member, locale) }}
+            {{ formatMemberHeading(member, locale) }}
           </h1>
 
           <p

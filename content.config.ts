@@ -12,7 +12,16 @@ const memberProfileSchema = z.object({
   middleName: z.string().optional(),
   familyName: z.string().optional(),
   displayName: localizedTextSchema.optional(),
+  nickname: localizedTextSchema.optional(),
   name: z.string().optional(),
+
+  email: z.string().email().optional(),
+  links: z.array(z.object({
+    label: z.string(),
+    url: z.string().url(),
+    icon: z.string().optional()
+  })).optional(),
+
   role: localizedTextSchema.optional(),
   affiliation: localizedTextSchema.optional(),
   interests: localizedTextSchema.optional(),
@@ -27,13 +36,12 @@ const memberProfileSchema = z.object({
     .regex(/^[a-zA-Z0-9._-]+\.pdf$/i)
     .optional(),
 
-  profileUrl: z.string().url().optional(),
-  email: z.string().email().optional(),
-  links: z.array(z.object({
-    label: z.string(),
-    url: z.string().url(),
-    icon: z.string().optional()
-  })).optional()
+  coordinates: z.object({
+    latitude: z.number().min(-90).max(90),
+    longitude: z.number().min(-180).max(180)
+  }).optional(),
+
+  profileUrl: z.string().url().optional()
 })
 
 export default defineContentConfig({
@@ -145,7 +153,7 @@ export default defineContentConfig({
           url: z.string()
         }))
       })
-    }),
+    })
 
   }
 })

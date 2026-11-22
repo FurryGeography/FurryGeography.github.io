@@ -20,6 +20,7 @@
     "@nuxtjs/i18n": "^10.6.0",
     "@takumi-rs/core": "^2.20.0",
     "@vueuse/nuxt": "^14.4.0",
+    "leaflet": "1.9.4",
     "motion-v": "^2.12.0",
     "nuxt": "^4.6.4",
     "nuxt-og-image": "^7.0.7",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.17.0",
+    "@types/leaflet": "1.9.21",
     "eslint": "^10.15.0",
     "eslint-plugin-better-tailwindcss": "^4.11.0",
     "typescript": "^6.0.3",

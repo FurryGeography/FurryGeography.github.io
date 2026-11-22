@@ -8,5 +8,13 @@
     "research": "Research",
     "publications": "Publications",
     "collaborations": "Collaborations"
+  },
+  "memberLocations": "Member locations",
+  "memberMap": {
+    "street": "Street map",
+    "satellite": "Satellite",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "home": "Reset map view"
   }
 }
