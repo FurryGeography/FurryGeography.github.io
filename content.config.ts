@@ -1,131 +1,29 @@
-import { defineCollection, defineContentConfig, z } from '@nuxt/content'
+import { defineCollection, defineContentConfig } from '@nuxt/content'
 
-const localizedTextSchema = z.record(z.string(), z.string())
-
-// Researcher public schema
-const memberProfileSchema = z.object({
-  slug: z.string().regex(/^[a-z0-9-]+$/i),
-  group: z.enum(['researcher', 'collaborator', 'template']),
-  order: z.number().int().optional(),
-
-  givenName: z.string().optional(),
-  middleName: z.string().optional(),
-  familyName: z.string().optional(),
-  displayName: localizedTextSchema.optional(),
-  nickname: localizedTextSchema.optional(),
-  name: z.string().optional(),
-
-  email: z.string().email().optional(),
-  links: z.array(z.object({
-    label: z.string(),
-    url: z.string().url(),
-    icon: z.string().optional()
-  })).optional(),
-
-  role: localizedTextSchema.optional(),
-  affiliation: localizedTextSchema.optional(),
-  interests: localizedTextSchema.optional(),
-  summary: localizedTextSchema.optional(),
-  bio: localizedTextSchema.optional(),
-
-  photo: z.string()
-    .regex(/^[a-zA-Z0-9._-]+\.(webp|png|jpg|jpeg|svg)$/i)
-    .optional(),
-
-  cv: z.string()
-    .regex(/^[a-zA-Z0-9._-]+\.pdf$/i)
-    .optional(),
-
-  coordinates: z.object({
-    latitude: z.number().min(-90).max(90),
-    longitude: z.number().min(-180).max(180)
-  }).optional(),
-
-  profileUrl: z.string().url().optional()
-})
+import { indexSchema } from './schemas/index'
+import { aboutSchema } from './schemas/about'
+import { membersSchema } from './schemas/members'
+import { memberProfileSchema } from './schemas/memberProfile'
+import { collaborationsSchema } from './schemas/collaborations'
 
 export default defineContentConfig({
   collections: {
     index: defineCollection({
       type: 'page',
       source: 'index.yml',
-      schema: z.object({
-        hero: z.object({
-          eyebrow: localizedTextSchema,
-          title: localizedTextSchema,
-          description: localizedTextSchema,
-          explore: localizedTextSchema
-        }),
-        research: z.object({
-          title: localizedTextSchema,
-          areas: z.array(
-            z.object({
-              id: z.string(),
-              title: localizedTextSchema,
-              description: localizedTextSchema
-            })
-          )
-        }),
-        collaborations: z.object({
-          title: localizedTextSchema,
-          description: localizedTextSchema
-        })
-      })
+      schema: indexSchema
     }),
 
     about: defineCollection({
       type: 'page',
       source: 'about.yml',
-      schema: z.object({
-        hero: z.object({
-          eyebrow: z.record(z.string(), z.string()),
-          title: z.record(z.string(), z.string()),
-          description: z.record(z.string(), z.string())
-        }),
-        sections: z.array(
-          z.object({
-            id: z.string(),
-            title: z.record(z.string(), z.string()),
-            description: z.record(z.string(), z.string())
-          })
-        )
-      })
+      schema: aboutSchema
     }),
 
     members: defineCollection({
       type: 'page',
       source: 'members/index.yml',
-      schema: z.object({
-        hero: z.object({
-          eyebrow: localizedTextSchema,
-          title: localizedTextSchema,
-          description: localizedTextSchema
-        }),
-        researchers: z.object({
-          title: localizedTextSchema,
-          description: localizedTextSchema,
-          empty: localizedTextSchema
-        }),
-        collaborators: z.object({
-          title: localizedTextSchema,
-          description: localizedTextSchema,
-          empty: localizedTextSchema
-        }),
-        ui: z.object({
-          profile: localizedTextSchema,
-          specialties: localizedTextSchema,
-          back: localizedTextSchema,
-          cv: localizedTextSchema
-        }),
-        join: z.object({
-          eyebrow: localizedTextSchema,
-          title: localizedTextSchema,
-          description: localizedTextSchema,
-          button: localizedTextSchema
-        }),
-        email: localizedTextSchema,
-        online: localizedTextSchema
-      })
+      schema: membersSchema
     }),
 
     memberProfiles: defineCollection({
@@ -137,23 +35,7 @@ export default defineContentConfig({
     collaborations: defineCollection({
       type: 'page',
       source: 'collaborations.yml',
-      schema: z.object({
-        hero: z.object({
-          title: localizedTextSchema,
-          description: localizedTextSchema
-        }),
-        email: z.string().email(),
-        emailButton: localizedTextSchema,
-        subject: localizedTextSchema,
-        contactsTitle: localizedTextSchema,
-        channels: z.array(z.object({
-          icon: z.string().optional(),
-          label: localizedTextSchema,
-          description: localizedTextSchema,
-          url: z.string()
-        }))
-      })
+      schema: collaborationsSchema
     })
-
   }
 })

@@ -8,7 +8,7 @@ const props = defineProps<{
   links: NavigationMenuItem[]
 }>()
 
-const { locale, locales, setLocale } = useI18n()
+const { t, locale, locales, setLocale } = useI18n()
 
 // Language
 const currentLanguage = computed(() => {
@@ -77,7 +77,7 @@ const mobileItems = computed<DropdownMenuItem[]>(() =>
                tracking-tight text-highlighted
                xl:invisible"
       >
-        FGN
+        {{ t('nav.title') }}
       </NuxtLink>
 
       <!-- Middle: navigation -->
