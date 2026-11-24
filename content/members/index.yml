@@ -41,6 +41,9 @@ ui:
   specialties:
     en: "Research Interests"
     zh: "研究兴趣"
+  interests:
+    en: "Interests"
+    zh: "兴趣爱好"
   back:
     en: "All Members"
     zh: "返回成员列表"

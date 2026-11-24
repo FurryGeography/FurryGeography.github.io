@@ -170,7 +170,11 @@ const bioParagraphs = computed(() => {
             class="mt-8 border-t border-default pt-5"
           >
             <p class="text-sm font-medium">
-              {{ localize(page.ui.specialties) }}
+              {{ localize(
+                member.group === 'collaborator'
+                  ? page.ui.interests
+                  : page.ui.specialties
+              ) }}
             </p>
 
             <p class="mt-2 leading-7 text-muted">

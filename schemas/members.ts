@@ -20,6 +20,7 @@ export const membersSchema = z.object({
   ui: z.object({
     profile: localizedTextSchema,
     specialties: localizedTextSchema,
+    interests: localizedTextSchema,
     back: localizedTextSchema,
     cv: localizedTextSchema
   }),
