@@ -1,0 +1,40 @@
+group: "collaborator"
+# Default order is by name, this will override
+# order: 1
+
+# Ordered by this
+givenName: "Evan"
+familyName: "Wells"
+displayName:
+  zh: "墨衡舟-望生"
+
+# Coodinate is optional
+coordinates:
+  latitude: 6.17
+  longitude: 35.74
+
+# Links and email are optional
+email: "3501616529@gmail.com"
+
+role:
+  en: "Assistant"
+  zh: "助理"
+
+affiliation:
+  en: "LiaoNing Finance and Trade College"
+  zh: "辽宁省财贸学院"
+
+summary:
+  en: "A gray wolf with an adventurous spirit"
+  zh: "一只富有探索精神的灰狼"
+
+interests:
+  en: "Hiking, Road Trip, Photography, Sanshou, Freestyle Combat"
+  zh: "户外徒步，自驾游，摄影，散打，自由搏击"
+
+bio:
+  en: |
+    A 27-year-old North American gray wolf from Liaoning ~ currently based in Liaoning, 
+    with plans to work in Africa in the future.
+  zh: |
+    来自辽宁的27岁的北美灰狼 ~目前在辽宁，未来会去非洲工作。
